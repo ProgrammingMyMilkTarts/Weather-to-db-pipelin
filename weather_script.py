@@ -53,10 +53,12 @@ weather_data = [
     sunset_time,
 ]
 
+BASE_DIR = "/home/poppingmybooty20/Desktop/DevWork/WeatherAPIProject/Weather-to-db-pipelin"
+file_path = os.path.join(BASE_DIR, "weather_data.csv")
 
-file_exists = os.path.isfile('weather_data.csv')
+file_exists = os.path.isfile(file_path)
 
-with open('weather_data.csv', mode = 'a', newline='', encoding='utf-8') as file:
+with open(file_path, mode = 'a', newline='', encoding='utf-8') as file:
     writer = csv.writer(file)
 
     if not file_exists:
