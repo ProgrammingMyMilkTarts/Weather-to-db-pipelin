@@ -66,3 +66,5 @@ with open(file_path, mode = 'a', newline='', encoding='utf-8') as file:
 
     writer.writerow(weather_data)
 
+
+
