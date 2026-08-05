@@ -1,22 +1,18 @@
-# Automated Weather ETL & Time-Series Analytics Pipeline
+# Automated Weather Data Pipeline and CLI Analyzer
 
-A lightweight, production-style backend automation pipeline that extracts live meteorological data via an API, parses it, logs it locally, and performs time-series analytics using Python and Pandas. 
+A lightweight Python pipeline that pulls weather data via an API, logs it into a local CSV, and provides a command-line tool to analyze and visualize trends.
 
-## Project Overview
-Mimics a mini-ETL (Extract, Transform, Load) pipeline running locally in a Linux environment, then fetches the data and uses it for analytical usage.
+## What it does
+* **Automated Data Logging:** Fetches live weather metrics (Temperature in C/K, Wind Speed, Humidity) and saves them with timestamps.
+* **Data Cleaning:** Uses Pandas to fill in any missing gaps using linear interpolation.
+* **CLI:** Run quick statistical summaries or generate visual graphs 
 
 ## Tech Stack
 * **Language:** Python 3
+* **CLI:** USed Argparse for the CLI
 * **Automation:** Linux Cron (Task Scheduler)
 * **Data Processing & Analysis:** Pandas, CSV, matplotlab
-* **API Integration:** OpenWeather Map API
 * **Version Control:** Git & GitHub
-
-## Pipeline Architecture
-1. **Extract:** A cron-scheduled worker script requests live JSON data from the OpenWeather API.
-2. **Transform:** The script strips out unnecessary metadata, converts Kelvin to Celsius, formats timestamps, and structures the payload.
-3. **Load:** Automatically appends clean, tabular records to a historical CSV data file (with automated header generation if the file doesn't exist).
-4. **Analyze:** A secondary Pandas script processes the time-series dataset to surface rolling trends, moving averages, and global meteorological extremes.
 
 ---
 
